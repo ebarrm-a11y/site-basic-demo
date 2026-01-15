@@ -1,0 +1,94 @@
+Act as a senior full-stack web developer + UX designer. Build a modern, fast, SEO-friendly photography business website for Canada.
+
+BUSINESS / BRAND
+- Business name: “(PRIMO PHOTO)” (make this editable in one place)
+- Location: Canada (English primary). Add optional French toggle (basic translation layer) but do not require full bilingual content; structure it so it can be expanded later.
+- Services: Weddings, Business/Corporate, Models/Portraits, Artists/Press Kits, Events, Product/Branding, Lifestyle.
+- Brand personality: premium, clean, minimal, cinematic. Emphasis on trust, professionalism, and high-end visual storytelling.
+
+GOALS
+- Convert visitors into leads: primary CTA is “Book a Consultation” and secondary CTA “View Portfolio”.
+- Collect inquiries: contact form + calendar link placeholder + WhatsApp is NOT used (Canada). Provide Email + Phone + Instagram.
+- Showcase work: portfolio with filtering by category and a gallery viewer (lightbox).
+- Build credibility: reviews, process, FAQs, about, and pricing starting points (ranges).
+- Local SEO: optimize for Canadian cities (Toronto, Vancouver, Montreal, Calgary, Ottawa) as examples, but allow easy editing.
+
+TECH REQUIREMENTS
+- Use a Next.js (App Router) or React + Vite setup (choose the simplest that works well on Replit).
+- Use TypeScript.
+- Styling: Tailwind CSS.
+- Performance: image optimization, lazy loading, responsive images, minimal JS.
+- Accessibility: proper headings, contrast, focus states, keyboard-friendly menus, alt text everywhere.
+- SEO: meta tags, OpenGraph, Twitter cards, sitemap, robots, JSON-LD for LocalBusiness/ProfessionalService.
+- Analytics: add a placeholder for Google Analytics / Plausible (no actual keys).
+- Forms: implement a working contact form using a simple backend route (e.g., Next.js route handler) that validates input and sends to a placeholder email service OR logs to console + stores in a lightweight JSON/db (SQLite) on Replit. Add spam protection: honeypot field + basic rate limiting.
+- Content management: do NOT require a full CMS. Instead, create a single data file (e.g., /data/siteContent.ts) where all text, prices, services, FAQs, testimonials, socials, and portfolio items are editable.
+- Images: use placeholders in /public (or URLs). Build the structure so images can be replaced easily. Include at least 24 portfolio image slots.
+
+SITE MAP (PAGES)
+1) Home
+   - Hero: big headline + short subheadline + CTA buttons
+   - Highlights: 3–6 service cards
+   - Featured portfolio grid (8 images)
+   - “How it works” (step-by-step)
+   - Testimonials (3–6)
+   - CTA band
+2) Portfolio
+   - Filter tabs: Weddings, Corporate, Portraits, Artists, Events, Product
+   - Masonry grid + lightbox viewer
+3) Services
+   - Separate sections for each service with deliverables, typical timeline, and “Ideal for” bullets
+4) Pricing
+   - Show starting at / ranges per category (e.g., Weddings $X–$Y, Corporate $X–$Y, Portraits $X–$Y)
+   - Clear note: “Final quote after consultation”
+   - Add “Packages” cards and add-ons
+5) About
+   - Bio, values, approach, gear/travel, coverage area
+6) Reviews
+   - Testimonials + optional embedded Google reviews placeholder
+7) FAQ
+   - 10–15 FAQs across weddings and corporate
+8) Contact / Book
+   - Form + availability notes + service selector + date picker (optional)
+   - Map placeholder + service area list
+9) Legal
+   - Privacy policy + terms (simple templates for Canada)
+
+DESIGN / UI REQUIREMENTS
+- Layout: lots of whitespace, premium typography, subtle animations, smooth hover states.
+- Use a sticky top navbar with logo left and CTA right.
+- Add a footer with quick links, socials, and a small “© YEAR” line.
+- Add a floating “Book” button on mobile.
+- Provide dark mode toggle.
+
+COPYWRITING
+- Write professional, believable copy for Canada.
+- Tone: confident, calm, human. Avoid clichés.
+- Include calls to action throughout.
+
+DELIVERABLES
+- Generate the full project with a clean folder structure.
+- Include instructions in README.md:
+  - how to run locally on Replit
+  - where to edit content
+  - how to replace images
+  - how to deploy
+- Provide all code, not pseudocode.
+- Make sure the build runs with no missing imports and no placeholder components that crash.
+
+DATA MODEL (IN /data/siteContent.ts)
+- siteName, tagline, primaryCity, serviceAreas[]
+- navLinks[]
+- services[] (id, title, shortDesc, longDesc, deliverables[], idealFor[], startingPriceRange)
+- portfolioItems[] (id, category, title, location, imageUrl, alt)
+- testimonials[] (name, city, text)
+- faqs[] (q, a)
+- socialLinks (instagram, email, phone)
+- seo defaults (title, description)
+- pricingPackages[] (name, includes[], priceRange)
+
+EXTRA
+- Add a /admin-content page protected by a simple password stored in env for quickly viewing/editing JSON in-browser (optional). If too complex, skip.
+- Add a lead-success confirmation page after form submit.
+
+Now build it.
